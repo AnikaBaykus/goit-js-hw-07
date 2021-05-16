@@ -8,6 +8,7 @@
 //   data-length="6"
 //   placeholder="Введи 6 символов"
 // />
+
 //  Сколько символов должно быть в инпуте, указывается
 // в его атрибуте data - length.
 // Если введено подходящее количество, то border инпута
@@ -27,3 +28,20 @@
 // }
 
 // !Решение
+
+const inputEl = document.querySelector('#validation-input');
+
+inputEl.addEventListener('blur', onInputBlur);
+inputEl.addEventListener('focus', onInputFocus)
+
+function onInputBlur(event) {  
+    const lengthString = event.currentTarget.value.length;
+
+    if (inputEl.dataset.length === `${lengthString}`) {
+        inputEl.classList.add('valid'); 
+    } else inputEl.classList.add('invalid');
+}
+
+function onInputFocus() {
+    inputEl.classList.remove('invalid','valid');
+}

@@ -1,0 +1,26 @@
+.js-gallery {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  width: 600px;
+  height: auto;
+  padding: 15px 60px 15px 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+  list-style: none;
+  border-top: 7px double rgb(24, 23, 23);
+  border-bottom: 7px double rgb(24, 23, 23);
+}
+
+.js-gallery-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.js-image {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+}

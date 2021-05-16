@@ -20,3 +20,20 @@
 // создания DOM - узлов используй document.createElement().
 
 // !Решение
+
+const ingredients = [
+  'Картошка',
+  'Грибы',
+  'Чеснок',
+  'Помидоры',
+  'Зелень',
+  'Приправы',
+];
+
+const listEl = document.querySelector('#ingredients')
+
+ingredients.forEach(ingredient => {
+    const ingredientEl = document.createElement('li');
+    ingredientEl.textContent = ingredient;
+    listEl.appendChild(ingredientEl);
+});
