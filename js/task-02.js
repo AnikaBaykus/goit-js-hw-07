@@ -30,10 +30,13 @@ const ingredients = [
   'Приправы',
 ];
 
-const listEl = document.querySelector('#ingredients')
+const listEl = document.querySelector('#ingredients');
+const ingredientsEl = [];
 
 ingredients.forEach(ingredient => {
-    const ingredientEl = document.createElement('li');
-    ingredientEl.textContent = ingredient;
-    listEl.appendChild(ingredientEl);
+  const ingredientEl = document.createElement('li');
+  ingredientEl.textContent = ingredient;
+  ingredientsEl.push(ingredientEl)
 });
+
+listEl.append(...ingredientsEl);

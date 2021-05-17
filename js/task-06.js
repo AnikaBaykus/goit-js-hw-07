@@ -36,8 +36,8 @@ inputEl.addEventListener('focus', onInputFocus)
 
 function onInputBlur(event) {  
     const lengthString = event.currentTarget.value.length;
-
-    if (inputEl.dataset.length === `${lengthString}`) {
+    const lengthInput = Number(inputEl.dataset.length);
+    if (lengthInput === lengthString) {
         inputEl.classList.add('valid'); 
     } else inputEl.classList.add('invalid');
 }

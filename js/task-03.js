@@ -47,23 +47,30 @@ const images = [
   },
 ];
 
+// const galleryEl = document.querySelector('#gallery');
+// galleryEl.classList.add('js-gallery');
+
+// images.forEach((image) => {
+//     const galleryItemEl = document.createElement('li');
+//     galleryItemEl.classList.add('js-gallery-item')
+
+//     const imageEl = document.createElement('img');
+//     imageEl.classList.add('js-image')
+//     imageEl.src = image.url;
+//     imageEl.alt = image.alt;
+//     imageEl.height = 200;
+
+//     galleryItemEl.appendChild(imageEl);
+//     galleryEl.insertBefore(galleryItemEl, null);
+    
+// });
+
 const galleryEl = document.querySelector('#gallery');
 galleryEl.classList.add('js-gallery');
-console.log(galleryEl);
 
-images.forEach((image) => {
-    const galleryItemEl = document.createElement('li');
-    galleryItemEl.classList.add('js-gallery-item')
+const createsGallery = ({ url, alt }) => `<li class = js-gallery-item > <img class = js-image src = ${url} alt = ${alt} height = 200px > </li>`;
+const createsImages = images.map(createsGallery).join('');
+// console.log(createsImages)
 
-    const imageEl = document.createElement('img');
-    imageEl.classList.add('js-image')
-    imageEl.src = image.url;
-    imageEl.alt = image.alt;
-    imageEl.height = 200;
+galleryEl.insertAdjacentHTML('beforeend', createsImages);
 
-    galleryItemEl.appendChild(imageEl);
-    galleryEl.insertBefore(galleryItemEl, null);
-    
-});
-
-galleryEl.classList.add('js-gallery');
