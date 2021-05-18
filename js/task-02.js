@@ -44,14 +44,25 @@ const ingredients = [
 // listEl.append(...ingredientsEl);
 
 // Вариант 2
-const listEl = document.querySelector('#ingredients');
+// const listEl = document.querySelector('#ingredients');
  
-function createArrIngredients(arr) {
-   return ingredients.map(ingredient => {
-    const ingredientEl = document.createElement('li');
-    ingredientEl.textContent = ingredient;
-     return ingredientEl;
-  }); 
-}
+// function createArrIngredients(arr) {
+//    return ingredients.map(ingredient => {
+//     const ingredientEl = document.createElement('li');
+//     ingredientEl.textContent = ingredient;
+//      return ingredientEl;
+//   }); 
+// }
 
-listEl.append(...createArrIngredients(ingredients));
+// listEl.append(...createArrIngredients(ingredients));
+
+// Вариант 3
+const listEl = document.querySelector('#ingredients');
+
+const ingredientsEl = ingredients.map(ingredient => {
+  const ingredientEl = document.createElement('li');
+  ingredientEl.innerHTML = ingredient;
+  return ingredientEl;
+});
+
+listEl.append(...ingredientsEl);
